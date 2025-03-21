@@ -1,11 +1,28 @@
+require('dotenv').config();
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+//MODELS
+const Subscriber = require('./models/subscriber');
+const Streamer = require('./models/streamer');
+const Subscription = require('./models/subscription');
+const mongoose = require('mongoose');
+
+mongoose.connect(process.env.DATABASE_URL, {useUnifiedTopology:true})
+.then(()=>{
+  console.log('Mongodb connected successfully');
+})
+.catch((err)=>{
+  console.error('Error connecting to mongodb:',err)
+})
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+const suscriberRouter = require('./routes/suscribers');
+const streamerRouter = require('./routes/streamers')
+const { configDotenv } = require('dotenv');
 
 var app = express();
 
@@ -21,7 +38,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-
+app.use('/suscribers', suscriberRouter);
+app.use('/streamers', streamerRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
