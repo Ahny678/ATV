@@ -2,9 +2,23 @@ GET http://localhost:3000/subscribers/all
 
 ###
 
+GET http://localhost:3000/subscribers/67dd1d783d0a6effcf3acbe5
+
+###
+DELETE  http://localhost:3000/subscribers/67dd2936261667a5fd277dff
+
+###
+PATCH  http://localhost:3000/subscribers/67dd1d783d0a6effcf3acbe5
+Content-Type: application/json
+
+{
+    "name": "updatedName"
+}
+###
+
 POST http://localhost:3000/subscribers/new
 Content-Type: application/json
 
 {
-    "name": "luchi"
+    "name": "drew"
 }
