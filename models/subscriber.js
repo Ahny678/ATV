@@ -19,4 +19,4 @@ const subscriberSchema = new mongoose.Schema({
 // Model
 const Subscriber = mongoose.model('Subscriber', subscriberSchema);
 
-module.exports = { Streamer, Subscriber };
+module.exports = Subscriber;

@@ -20,7 +20,7 @@ mongoose.connect(process.env.DATABASE_URL, {useUnifiedTopology:true})
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-const suscriberRouter = require('./routes/suscribers');
+const suscriberRouter = require('./routes/subscribers');
 const streamerRouter = require('./routes/streamers')
 const { configDotenv } = require('dotenv');
 
@@ -38,7 +38,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/suscribers', suscriberRouter);
+app.use('/subscribers', suscriberRouter);
 app.use('/streamers', streamerRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

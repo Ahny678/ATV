@@ -1,1 +1,10 @@
-POST http://localhost:3000/suscribers
+GET http://localhost:3000/subscribers/all
+
+###
+
+POST http://localhost:3000/subscribers/new
+Content-Type: application/json
+
+{
+    "name": "luchi"
+}
