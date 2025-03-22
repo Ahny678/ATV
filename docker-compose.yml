@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  # Service for the Express app
+  web:
+    build: .
+    ports:
+      - "5000:3000" # Map port 8080 on the host to port 3000 in the container
+    environment:
+      - PORT=3000
+      - MONGO_URI=mongodb://mongo:27017/ATV # Update MongoDB URI to use the service name 'mongo'
+    depends_on:
+      - mongo
+    volumes:
+      - .:/myapp # Optional, for hot-reloading or development use
+    networks:
+      - app-network
+
+  # Service for MongoDB
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017" # Expose MongoDB's default port
+    volumes:
+      - mongo-data:/data/db # Persist MongoDB data
+    networks:
+      - app-network
+
+# Define the shared network for communication between services
+networks:
+  app-network:
+    driver: bridge
+
+# Define volumes for persistent data
+volumes:
+  mongo-data:

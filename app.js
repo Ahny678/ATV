@@ -10,7 +10,7 @@ const Streamer = require('./models/streamer');
 const Subscription = require('./models/subscription');
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.DATABASE_URL, {useUnifiedTopology:true})
+mongoose.connect(process.env.DATABASE_URL)
 .then(()=>{
   console.log('Mongodb connected successfully');
 })
