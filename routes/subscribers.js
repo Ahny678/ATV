@@ -17,6 +17,6 @@ router.patch(
 router.delete(
   "/:id",
   subscriberController.getSub,
-  subscriberController.deleteASuscriber
+  subscriberController.deleteSubscriber
 );
 module.exports = router;

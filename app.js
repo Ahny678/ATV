@@ -6,7 +6,7 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 //SWAGGER CONFIGS-------------------------------
 const swaggerUi = require("swagger-ui-express");
-const swaggerSpecs = require("./swaggerConfig");
+const swaggerSpecs = require("./swagger/swaggerConfig");
 //-------------------------------------------------
 //MODELS
 const Subscriber = require("./models/subscriber");

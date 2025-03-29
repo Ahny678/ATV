@@ -5,7 +5,7 @@ GET http://localhost:3000/subscribers/all
 GET http://localhost:3000/subscribers/67dd1d783d0a6effcf3acbe5
 
 ###
-DELETE  http://localhost:3000/subscribers/67dd2936261667a5fd277dff
+DELETE  http://localhost:3000/subscribers/67e7e624f2ed58b6e7d8ed63
 
 ###
 PATCH  http://localhost:3000/subscribers/67dd1d783d0a6effcf3acbe5
