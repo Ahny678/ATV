@@ -16,7 +16,7 @@
  *               properties:
  *                 message:
  *                   type: string
- *                   example: "List of subscribers"
+ *                   example:  {"message": "{\n  _id: new ObjectId('1234567'),\n  name: 'Name1',\n  streamers: [],\n  __v: 0\n},{\n  _id: new ObjectId('9876543'),\n  name: 'Name2',\n  streamers: [],\n  __v: 0\n}"}
  *       500:
  *         description: Server error while retrieving subscribers
  *         content:
