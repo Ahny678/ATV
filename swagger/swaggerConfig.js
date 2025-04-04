@@ -10,7 +10,8 @@ const swaggerOptions = {
     },
     servers: [
       {
-        url: "http://localhost:3000",
+        url: "https://atv-myj0.onrender.com/",
+        // url: "http://localhost:3000",
       },
     ],
   },
